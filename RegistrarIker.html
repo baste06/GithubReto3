@@ -1,0 +1,35 @@
+<?php
+//Vamos a controlar si hay una sesion creada, en caso contrario iremos a index.html
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    //si no existe la sesion volvemos a index.html
+    header('location:index.html');
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="LoginSergio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Honk:MORF@15&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>CHAT</title>
+</head>
+<body>
+<center>
+    <form action="MensajesSergio.php" method="post">
+        Usuario: <input type="text" name="usuario"/><br/>
+        Mensaje: <input type="text" name="mensaje" width="300"/><br/>
+            <input type="submit" value="enviar" name="enviar"/>
+    </form>
+    <hr/>
+    <h2>Chat Sergio</h2>
+    <iframe src="LeerSergio.php" width="400" height="400"></iframe>
+    <br><a href="EliminarSergio.php">BORRAR MENSAJE </a>
+</center>    
+</body>
+</html>
